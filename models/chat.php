@@ -21,6 +21,6 @@ $result = Query($conn, $sql);
 
 while($trow = $result->fetch_array(MYSQLI_ASSOC)){
   echo '<div class="row message-bubble">';
-  echo '<p class="dinline text-muted">' . $trow['sender'] . ': </p><p class="dinline">' . $trow['message'] . "</p></div>";
+  echo '<p class="dinline text-muted">' . $trow['sender'] . ': </p><p class="dinline">' . htmlspecialchars($trow['message']) . "</p></div>";
 }
 ?>
